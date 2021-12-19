@@ -4,7 +4,7 @@ from config.general import PROD_ENV, TEST_ENV, DEV_ENV
 
 class DefaultConfig:
     HOST, PORT = '0.0.0.0', 8000
-    ELASTIC_HOST = '192.168.222.179'
+    ELASTIC_HOST = '192.168.27.179'
 
 
 class ProdConfig(DefaultConfig):

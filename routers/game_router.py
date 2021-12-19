@@ -22,5 +22,5 @@ async def get_by_name(name: str):
 
 @game_router.post('/')
 async def create_game(game: Game, status_code=status.HTTP_201_CREATED) -> dict:
-    elastic_client.index(index=GAMES_INDEX, document=game.dict())
-    return game.dict()
+    res = elastic_client.index(index=GAMES_INDEX, document=game.dict())
+    return res['_id']

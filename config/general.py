@@ -1,0 +1,7 @@
+ENV_ARG = 'env'
+PROD_ENV = 'prod'
+TEST_ENV = 'test'
+DEV_ENV = 'dev'
+DEFAULT_ENV = PROD_ENV
+
+COMMAND_LINE_ARGUMENTS = [ENV_ARG]

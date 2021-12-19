@@ -1,6 +1,3 @@
-import uuid
-
-from elasticsearch_dsl import Search
 from fastapi import APIRouter, status
 
 from consts.elastic import GAMES_INDEX

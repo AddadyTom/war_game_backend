@@ -25,6 +25,12 @@ class Role(BaseModel):
     section: str
 
 
+class Event(BaseModel):
+    title: str
+    description: str
+    section: str
+
+
 class Resource(BaseModel):
     name: str
     description: str
@@ -42,5 +48,6 @@ class Game(BaseModel):
     time_stops: List[TimeStop]
     characters: List[Character]
     roles: List[Role]
+    events: List[Event]
     resources: List[Resource]
     rule_type: str

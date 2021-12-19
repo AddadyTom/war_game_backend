@@ -8,9 +8,9 @@ from utils.elastic import elastic_client
 game_router = APIRouter()
 
 
-@game_router.get('/{id}')
-async def get(id: str):
-    elastic_client.get(index=GAMES_INDEX, id=id)
+@game_router.get('/{id_}')
+async def get(id_: str):
+    elastic_client.get(index=GAMES_INDEX, id=id_)
 
 
 @game_router.get('/')

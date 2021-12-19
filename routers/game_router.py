@@ -1,15 +1,25 @@
+import uuid
+
+from elasticsearch_dsl import Search
 from fastapi import APIRouter, status
+
+from consts.elastic import GAMES_INDEX
 from models.game import Game
 from utils.elastic import elastic_client
-from consts.elastic import GAMES_INDEX
-import uuid
 
 game_router = APIRouter()
 
 
 @game_router.get('/{id}')
-async def get_game():
-    return
+async def get(id: str):
+    elastic_client.get(index=GAMES_INDEX, id=id)
+
+
+@game_router.get('/')
+async def get_by_name(name: str):
+    Search(index=GAMES_INDEX) \
+        .using(elastic_client) \
+        .query("match", name=name)
 
 
 @game_router.post('/')

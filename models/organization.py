@@ -8,3 +8,4 @@ class Organization(BaseModel):
     country: str
     flag: bytes
     persons: List[Person]
+    name: str
